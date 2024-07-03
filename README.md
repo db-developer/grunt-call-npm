@@ -10,7 +10,7 @@ run npm commands (like `install` or `update`) from grunt.
 [![Build Status](https://travis-ci.com/db-developer/grunt-call-npm.svg?branch=master)](https://travis-ci.com/db-developer/grunt-call-npm)
 [![dependencies](https://img.shields.io/librariesio/release/npm/grunt-call-npm)](https://libraries.io/)
 
-This plugin is a fork of [grunt-npm-command](https://github.com/unindented/grunt-npm-command) (archived repository)
+This plugin is a fork of [grunt-npm-command](https://github.com/unindented/grunt-npm-command) (archived repository)  
 Reason: https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2
 
 ## content ##
