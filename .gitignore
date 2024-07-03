@@ -1,0 +1,10 @@
+/node_modules/
+/build/
+/dist/
+/src/**/*.js.gz
+/src/**/*.xxxx.js
+/src/test/**/*.----.js
+/src/test/tmp/
+/.nyc_output/
+/package-lock.json
+/env.ps1

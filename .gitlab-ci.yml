@@ -1,0 +1,65 @@
+image: node:current-alpine
+
+stages:
+  - npm
+  - test
+  - cleanup
+
+cache: &cache_node_modules
+  paths:
+    - node_modules/
+
+npm:
+  stage: npm
+
+  cache:
+    # inherit cache_node_modules settings
+    <<: *cache_node_modules
+    policy: push
+
+  tags:
+    - docker
+
+  script:
+    - npm cache clean --force
+    - npm install --force
+
+test:
+  stage: test
+
+  cache:
+    # inherit cache_node_modules settings
+    <<: *cache_node_modules
+    policy: pull
+
+  tags:
+    - docker
+
+  script:
+    - npm run test
+
+  artifacts:
+    expire_in: 2 days
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: dist/coverage/cobertura-coverage.xml
+
+cleanup:
+  stage: cleanup
+
+  cache:
+    # inherit cache_node_modules settings
+    <<: *cache_node_modules
+    policy: pull-push
+
+  script:
+    - echo "Cleaning up"
+    # clean caching directory
+    - rm -rf node_modules/
+    # make it available again so "nothing" can/will be cached
+    # if directory node_modules does not exist, cache will be
+    # considered as "uptodate" and remains messy (no upload).
+    - mkdir node_modules
+
+  when: always

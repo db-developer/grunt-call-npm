@@ -1,0 +1,74 @@
+{
+  "name": "grunt-call-npm",
+  "version": "0.0.1",
+  "description": "run npm commands (like install or update) from grunt.",
+  "author": {
+    "name": "Daniel Perez Alvarez",
+    "email": "unindented@gmail.com",
+    "url": "http://unindented.org/"
+  },
+  "contributors" : [
+    {
+      "name" : "Dirk Brenckmann",
+      "email" : "db.developer@gmx.de",
+      "url" : "https://www.slashlib.org/"
+    }
+  ],
+  "license": "MIT",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "tasks/tasks.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/db-developer/grunt-call-npm.git"
+  },
+  "scripts": {
+    "all": "grunt all",
+    "build": "grunt build",
+    "coverage": "grunt coverage",
+    "docs": "grunt docs",
+    "test": "grunt test"
+  },
+  "keywords": [
+    "grunt",
+    "gruntplugin",
+    "npm"
+  ],
+  "files": [
+    "docs",
+    "tasks",
+    "lib"
+  ],
+  "bugs": {
+    "url": "https://github.com/db-developer/grunt-call-npm/issues"
+  },
+  "homepage": "https://www.slashlib.org/",
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",    
+    "babel-loader": "^9.1.2",
+    "expect.js": "^0.3.1",
+    "grunt": "^1.6.1",
+    "grunt-check-outdated": "^1.2.0",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-eslint": "^25.0.0",
+    "grunt-jsdoc2md": "^1.2.0",
+    "grunt-jsonfile": "^1.2.0",
+    "grunt-mkdir": "^1.1.0",
+    "grunt-move": "^2.0.0",
+    "grunt-nyc-mocha": "^1.2.0",
+    "grunt-rollup": "^12.0.0",
+    "grunt-shell": "^4.0.0",
+    "grunt-webpack": "^6.0.0",
+    "load-grunt-config": "^4.0.1",
+    "load-grunt-tasks": "^5.1.0",
+    "source-map-support": "^0.5.21",
+    "webpack": "^5.88.2"
+  }
+}
