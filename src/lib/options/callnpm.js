@@ -43,7 +43,7 @@ const _STRINGS = _init_STRINGS();
 /**
  *  Defines and returns the set of options that is passed to task 'check_outdated'.
  *
- *  @return {Object}  check_outdated default options
+ *  @return {Object}  call_npm default arguments
  */
 function getArguments() {
   return {
@@ -56,7 +56,7 @@ function getArguments() {
 /**
  *  Defines and returns the set of options that is passed to task 'check_outdated'.
  *
- *  @return {Object}  check_outdated default options
+ *  @return {Object}  call_npm default options
  */
 function getOptions() {
   return {

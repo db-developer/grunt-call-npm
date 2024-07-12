@@ -13,7 +13,7 @@
 "use strict";
 
 /**
- *  Module initializer
+ *  Module table
  *  @ignore
  */
 const _m = {
@@ -22,7 +22,7 @@ const _m = {
 };
 
 /**
- *  Stringtable initializer
+ *  String table initializer
  *  @ignore
  */
 function _init_STRINGS() {

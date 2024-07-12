@@ -17,14 +17,14 @@
 ### grunt-call-grunt/options/callnpm~getArguments() ⇒ <code>Object</code>
 > Defines and returns the set of options that is passed to task 'check_outdated'.
 
-**Returns**: <code>Object</code> - check_outdated default options  
+**Returns**: <code>Object</code> - call_npm default arguments  
 
 <br><a name="module_grunt-call-grunt/options/callnpm..getOptions"></a>
 
 ### grunt-call-grunt/options/callnpm~getOptions() ⇒ <code>Object</code>
 > Defines and returns the set of options that is passed to task 'check_outdated'.
 
-**Returns**: <code>Object</code> - check_outdated default options  
+**Returns**: <code>Object</code> - call_npm default options  
 
 <br><a name="module_grunt-call-grunt/options/callnpm..getTaskOptions"></a>
 

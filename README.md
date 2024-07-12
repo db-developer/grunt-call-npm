@@ -54,21 +54,29 @@ The following examples assume that the grunt plugin 'load-grunt-config' is used.
 Alternatively, the code can of course be integrated into the 'gruntfile.js' file.  
 
 ```javascript
-// file check_outdated.js
+// file call_npm.js
 module.exports = function ( grunt, options ) {
   return {
-    always: {                   // this is a grunt multitask, so define a target.
+    options: {
+      opts: {                     // options passed to nodes 'child_process::spawn'
+                                  // Note: this is a default option and can be omitted!
+        shell: true,              // required as of https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2 (default! not required)
+                                  // Note: this is a default option and can be omitted!
+        quiet: true               // will execute 'npm help' silently
+                                  // Note: this is a default option which defaults to 'false'; it can be omitted.
+        // ...                    // any other option that can be passed to 'child_process::spawn' 'opts'
+      }
+    },
+    always: {                     // this target 'always' of grunt multitask 'call_npm'
       options: {
-        cmd:  "help",           // will run 'npm help'
-        args:   [ ],            // will append any arguments to 'npm help'
-        dryrun: true,           // will NOT run 'npm help' but print out the 'npm help' command that would have been run
-        opts: {                 // options passrd to nodes 'child_process::spawn'
-          shell: true,          // required as of https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2 (default! not required)
-          quiet: true           // will execute 'npm help' silently
-          ...                   // any other option that can be passed to 'child_process::spawn' 'opts'
-        }
+        cmd:    "help",           // will run 'npm help'
+        args:   [ ],              // will append any arguments to 'npm help'
+        cwd:    "./path/to/pkg",  // will become the working directory of command 'npm help'
+        dryrun: true              // will NOT run 'npm help' but print out the 'npm help' command that would have been run
+        // opts: {...}            // define 'opts' to override 'opts' in default 'options' (s.a.)
       }
     }
   };
 };
 ```
+For 'npm &lt;command&gt;' and matching command line arguments see [npm Docs](https://docs.npmjs.com/)

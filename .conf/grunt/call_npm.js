@@ -5,14 +5,16 @@
 
 module.exports = function ( grunt, options ) {
   return {
+    options: {
+      opts: {
+        quiet: true,
+        shell: true,
+        blubb: "blubb"
+      }
+    },
     always: {
       options: {
-        cmd: "help",
-        opts: {
-          quiet: true,
-          shell: true,
-          blubb: "blubb"
-        }
+        cmd: "help"
       }
     }
   };

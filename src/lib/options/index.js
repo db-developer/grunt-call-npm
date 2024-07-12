@@ -27,7 +27,7 @@ const _STRINGS = { TOCALLNPMARGS: "toCallNPMArgs" };
 
 // Module exports:
 /**
- *  Register a multitask for check_outdated.
+ *  Register a multitask for 'call_npm'.
  *
  *  @see    Function [toArgs]{@link callnpm.md#.toArgs}
  *          published by module callnpm for a detailed function description.

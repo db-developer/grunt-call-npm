@@ -14,7 +14,7 @@
 "use strict";
 
 /**
- *  Stringtable
+ *  String table
  *  @ignore
  */
 const _STRINGS = {
