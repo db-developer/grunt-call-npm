@@ -29,6 +29,7 @@ module.exports = {
   NYCMOCHA: "nyc_mocha",
   REPORTS:  "reports",
   ROLLUP:   "rollup",
+  SHELL:    "shell",
   SRC:      "src",
   TASKS:    "tasks",
   TEMPLATE: "template",
