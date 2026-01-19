@@ -10,14 +10,20 @@ run npm commands (like `install` or `update`) from grunt.
 [![Build Status](https://travis-ci.com/db-developer/grunt-call-npm.svg?branch=master)](https://travis-ci.com/db-developer/grunt-call-npm)
 [![dependencies](https://img.shields.io/librariesio/release/npm/grunt-call-npm)](https://libraries.io/)
 
-This plugin is a fork of [grunt-npm-command](https://github.com/unindented/grunt-npm-command) (archived repository)  
+This plugin is a fork of [grunt-npm-command](https://github.com/unindented/grunt-npm-command) (archived repository).  
 Reason: https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2
 
-## content ##
+Due to changes in Node.js security defaults (April 2024), spawning npm processes without an explicit shell
+may fail or behave differently in certain environments.  
+This plugin explicitly supports the required configuration and keeps npm invocation predictable inside
+Grunt-based build pipelines.
 
-* Usage (see further down this page)
+## Content
+
+* Usage
   * [Getting started guide](#getting-started)
   * [Usage and examples](#usage)
+  * [When to use this plugin](#when-to-use-this-plugin)
 
 * Developers
   * [Testing grunt-call-npm](docs/grunt.md#testing)
@@ -29,54 +35,80 @@ Reason: https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2
 
 [Changelog](CHANGELOG.md)
 
-## getting started ##
+## Getting started
 
-This guide assumes, that you are familiar with the use of
+This guide assumes that you are already familiar with the use of
 [npm](https://npmjs.com "Homepage of npm") and
-[grunt](https://gruntjs.com "Homepage of grunt").  
-The plugin can be installed by the following command:
+[grunt](https://gruntjs.com "Homepage of grunt").
 
-<code>npm install grunt-call-npm --save-dev</code>
+This plugin is intended for users who already work with Grunt-based build processes.
+It does not aim to abstract npm itself, but to integrate npm commands cleanly into
+existing Grunt workflows.
 
-Once installed, the plugin may be loaded from within your gruntfile:
+The plugin can be installed using the following command:
 
-<code>grunt.loadNpmTasks( "grunt-call-npm" );</code>
+```
+npm install grunt-call-npm --save-dev
+```
 
-Setup the task configuration as described below (see usage) and run the task:
+Once installed, the plugin can be loaded from within your Gruntfile:
 
-<code>grunt call_npm</code>
+```
+grunt.loadNpmTasks("grunt-call-npm");
+```
 
-Of cause, the task can be integrated into any complex build process.
+Set up the task configuration as described below (see usage) and run the task:
 
-## usage ##
+```
+grunt call_npm
+```
 
-The following examples assume that the grunt plugin 'load-grunt-config' is used.
-Alternatively, the code can of course be integrated into the 'gruntfile.js' file.  
+Of course, the task can be integrated into any more complex build process.
+
+## When to use this plugin
+
+Use this plugin if your Grunt build needs to trigger npm commands as part of a reproducible workflow, for example:
+
+* installing or updating dependencies in sub-packages
+* preparing fixtures or test environments during a build
+* synchronizing npm-based steps with other Grunt tasks
+
+If you only need to run an occasional shell command, a generic `exec` task may be sufficient.
+This plugin is useful when npm invocation is a first-class part of your build logic.
+
+## Usage
+
+The following examples assume that the Grunt plugin
+[`load-grunt-config`](https://www.npmjs.com/package/load-grunt-config) is used.
+
+Alternatively, the configuration can be integrated directly into the `Gruntfile.js`.
 
 ```javascript
 // file call_npm.js
 module.exports = function ( grunt, options ) {
   return {
     options: {
-      opts: {                     // options passed to nodes 'child_process::spawn'
-                                  // Note: this is a default option and can be omitted!
-        shell: true,              // required as of https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2 (default! not required)
-                                  // Note: this is a default option and can be omitted!
+      opts: {                     // options passed to Node.js 'child_process::spawn'
+                                  // Note: this is a default option and can be omitted
+        shell: true,              // required as of https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2
+                                  // default: true
         quiet: true               // will execute 'npm help' silently
-                                  // Note: this is a default option which defaults to 'false'; it can be omitted.
-        // ...                    // any other option that can be passed to 'child_process::spawn' 'opts'
+                                  // default: false
+        // ...                    // any other option supported by 'child_process::spawn'
       }
     },
-    always: {                     // this target 'always' of grunt multitask 'call_npm'
+    always: {                     // target 'always' of Grunt multitask 'call_npm'
       options: {
         cmd:    "help",           // will run 'npm help'
-        args:   [ ],              // will append any arguments to 'npm help'
-        cwd:    "./path/to/pkg",  // will become the working directory of command 'npm help'
-        dryrun: true              // will NOT run 'npm help' but print out the 'npm help' command that would have been run
-        // opts: {...}            // define 'opts' to override 'opts' in default 'options' (s.a.)
+        args:   [],               // arguments appended to 'npm help'
+        cwd:    "./path/to/pkg",  // working directory of the npm command
+        dryrun: true              // prints the command without executing it
+        // opts: {...}            // overrides default 'opts' if defined
       }
     }
   };
 };
 ```
-For 'npm &lt;command&gt;' and matching command line arguments see [npm Docs](https://docs.npmjs.com/)
+
+For `npm <command>` and supported command-line arguments, see the
+[npm documentation](https://docs.npmjs.com/).
