@@ -17,7 +17,7 @@
   "license": "MIT",
   "engineStrict": true,
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "main": "tasks/tasks.js",
   "repository": {
