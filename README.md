@@ -6,8 +6,8 @@ run npm commands (like `install` or `update`) from grunt.
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![jsdoc](https://img.shields.io/static/v1?label=jsdoc&message=%20api%20&color=blue)](https://jsdoc.app/)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](https://gruntjs.com/)
-[![codecov](https://codecov.io/gh/db-developer/grunt-call-npm/branch/master/graph/badge.svg)](https://codecov.io/gh/db-developer/grunt-call-npm)
-[![Build Status](https://travis-ci.com/db-developer/grunt-call-npm.svg?branch=master)](https://travis-ci.com/db-developer/grunt-call-npm)
+[![codecov](https://codecov.io/gh/db-developer/grunt-call-npm/branch/main/graph/badge.svg)](https://codecov.io/gh/db-developer/grunt-call-npm)
+![Build & Test](https://github.com/db-developer/grunt-call-npm/actions/workflows/ci.yml/badge.svg)
 [![dependencies](https://img.shields.io/librariesio/release/npm/grunt-call-npm)](https://libraries.io/)
 
 This plugin is a fork of [grunt-npm-command](https://github.com/unindented/grunt-npm-command) (archived repository).  
