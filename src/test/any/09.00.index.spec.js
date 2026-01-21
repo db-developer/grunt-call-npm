@@ -11,10 +11,10 @@ const expect    = require( "expect.js"   );
     const idx     = require( "../../lib/index" );
 
     describe( "Testing exports of module 'index'", () => {
-      it( "Function 'registerMultiTaskCallNPM' should exist", () => {
-          expect( idx.registerMultiTaskCallNPM ).not.to.be( undefined  );
-          expect( idx.registerMultiTaskCallNPM ).not.to.be( null       );
-          expect( idx.registerMultiTaskCallNPM ).to.be.a(   "function" );
+      it( "Function 'registerMultiTask' should exist", () => {
+          expect( idx.registerMultiTask ).not.to.be( undefined  );
+          expect( idx.registerMultiTask ).not.to.be( null       );
+          expect( idx.registerMultiTask ).to.be.a(   "function" );
       });
     });
   });

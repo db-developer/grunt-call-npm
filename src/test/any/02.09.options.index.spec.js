@@ -12,9 +12,9 @@ const expect = require( "expect.js" );
 
     describe( "Testing exports of module 'options'", () => {
       it( "Function 'toCallNPMArgs' should exist", () => {
-          expect( options.toCallNPMArgs ).not.to.be( undefined  );
-          expect( options.toCallNPMArgs ).not.to.be( null       );
-          expect( options.toCallNPMArgs ).to.be.a(   "function" );
+          expect( options.toArgs ).not.to.be( undefined  );
+          expect( options.toArgs ).not.to.be( null       );
+          expect( options.toArgs ).to.be.a(   "function" );
       });
     });
   });

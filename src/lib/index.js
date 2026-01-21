@@ -1,44 +1,32 @@
 /**
- *	Package interface of grunt-call-npm<br />
- *  All static members of this module are available for 3rd party access.
+ * lib/index.js: grunt-call-npm
  *
- *  @module grunt-call-npm
+ * Package interface of grunt-call-npm.
+ * All static members of this module are available for 3rd party access.
+ * 
+ * @module grunt-call-npm
  *
  *//*
- *  © 2024, slashlib.org.
+ *  © 2024, db-developer.
  *
- *  index.js  is distributed WITHOUT ANY WARRANTY; without even the implied
- *  warranty  of  MERCHANTABILITY  or  FITNESS  FOR  A PARTICULAR  PURPOSE.
- *
+ *  Distributed  WITHOUT  ANY WARRANTY;  without  even the  implied
+ *  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 "use strict";
 
-/**
- *  Module table
- *  @ignore
- */
-const _m = {
-  tasks:    require( "./tasks" )
-}
+const tasks = require( "./tasks" );
 
-/**
- *  String table
- *  @ignore
- */
-const _STRINGS = {
-  REGISTERMULTITASKCALLNPM: "registerMultiTaskCallNPM",
-}
-
-// Module exports:
 /**
  *  Register a multitask for call_npm.
+ * 
+ *  This function forwards to `tasks.registerMultiTask()` and is the main
+ *  entry point for integrating the plugin into a Gruntfile.
  *
- *  @see    Function [registerMultiTaskCallNPM]{@link tasks/index.md#.registerMultiTaskCallNPM}
- *          published by module tasks for a detailed function description.
+ *  This is a re-export of function 
+ *  [registerMultiTask]{@link tasks/index.md#.registerMultiTask}
+ *  published by module [tasks]{@link tasks/index.md}
  *
- *  @function module:grunt-call-npm.registerMultiTaskCallNPM
- *  @param  {grunt} grunt
+ *  @function module:grunt-call-npm.registerMultiTask
+ *  @param  {grunt} grunt - The Grunt runtime instance.
  */
-Object.defineProperty( module.exports, _STRINGS.REGISTERMULTITASKCALLNPM, {
-  value:    _m.tasks.registerMultiTaskCallNPM,
-  writable: false, enumerable: true, configurable: false });
+module.exports.registerMultiTask = tasks.registerMultiTask;

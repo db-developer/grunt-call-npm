@@ -1,11 +1,18 @@
 /**
+ * tasks/tasks.js: grunt tasks
+ *
+ * @module tasks
+ *
+ *//*
  *  © 2024, db-developer.
- *  Licensed under the MIT license.
+ *
+ *  Distributed  WITHOUT  ANY WARRANTY;  without  even the  implied
+ *  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 "use strict";
 
 const lib = require( "../lib" );
 
 module.exports = function( grunt ) {
-  lib.registerMultiTaskCallNPM( grunt );
+  lib.registerMultiTask( grunt );
 };

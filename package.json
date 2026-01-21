@@ -1,6 +1,6 @@
 {
   "name": "grunt-call-npm",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "run npm commands (like install or update) from grunt.",
   "author": {
     "name": "Daniel Perez Alvarez",

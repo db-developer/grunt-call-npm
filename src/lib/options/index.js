@@ -1,45 +1,34 @@
-
 /**
- *	index.js: grunt-call-npm/options
+ * lib/options/index.js: grunt-call-npm
+ * 
+ * Aggregated options API for `grunt-call-npm`.
  *
- *  @module grunt-call-npm/options
+ * This module exposes the public option-related functions that are
+ * intended for external consumption.
+ *
+ * @module grunt-call-npm/options
  *
  *//*
- *  © 2024, slashlib.org.
+ *  © 2024, db-developer.
  *
- *  index.js  is distributed WITHOUT ANY WARRANTY; without even the implied
- *  warranty  of  MERCHANTABILITY  or  FITNESS  FOR  A PARTICULAR  PURPOSE.
- *
+ *  Distributed  WITHOUT  ANY WARRANTY;  without  even the  implied
+ *  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 "use strict";
 
-/**
- *  Module table
- *  @ignore
- */
-const _m = { callnpm: require( "./callnpm" )};
+const callnpm = require( "./callnpm" );
 
 /**
- *  String table
- *  @ignore
- */
-const _STRINGS = { TOCALLNPMARGS: "toCallNPMArgs" };
-
-// Module exports:
-/**
- *  Register a multitask for 'call_npm'.
+ *  Converts task-specific options for the `call_npm` task into
+ *  a plain options object used for executing NPM.
  *
- *  @see    Function [toArgs]{@link callnpm.md#.toArgs}
- *          published by module callnpm for a detailed function description.
+ *  This is a re-export of function [toArgs]{@link callnpm.md#.toArgs}
+ *  published by module [options/callnpm]{@link callnpm.md}
  *
  *  @function module:grunt-call-npm/options.toArgs
- *  @param  {grunt}           grunt
- *  @param  {grunt.task}      task
- *
- *  @return {Promise<Object>} obj
- *  @return {Array<strings>}  obj.args  an array of arguments
- *  @return {Array<any>}      obj.opts  an array of options
+ *  @param   {grunt}        grunt    The Grunt runtime instance
+ *  @param   {grunt.task}   task     The current Grunt task instance
+ *  @param   {Object}      [options] Optional task options override
+ *  @returns {Promise<Object>}       Resolved options object
  */
-Object.defineProperty( module.exports, _STRINGS.TOCALLNPMARGS, {
-  value:    _m.callnpm.toArgs,
-  writable: false, enumerable: true, configurable: false });
+module.exports.toArgs = callnpm.toArgs

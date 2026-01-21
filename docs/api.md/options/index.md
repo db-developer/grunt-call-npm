@@ -2,19 +2,19 @@
 <br><a name="module_grunt-call-npm/options"></a>
 
 ## grunt-call-npm/options
-> index.js: grunt-call-npm/options
+> lib/options/index.js: grunt-call-npm> > Aggregated options API for `grunt-call-npm`.> > This module exposes the public option-related functions that are> intended for external consumption.
 
 
 <br><a name="module_grunt-call-npm/options.toArgs"></a>
 
-### grunt-call-npm/options.toArgs(grunt, task) ⇒ <code>Promise.&lt;Object&gt;</code> \| <code>Array.&lt;strings&gt;</code> \| <code>Array.&lt;any&gt;</code>
-> Register a multitask for 'call_npm'.
+### grunt-call-npm/options.toArgs(grunt, task, [options]) ⇒ <code>Promise.&lt;Object&gt;</code>
+> Converts task-specific options for the `call_npm` task into>  a plain options object used for executing NPM.> >  This is a re-export of function [toArgs](callnpm.md#.toArgs)>  published by module [options/callnpm](callnpm.md)
 
-**Returns**: <code>Promise.&lt;Object&gt;</code> - obj<code>Array.&lt;strings&gt;</code> - obj.args  an array of arguments<code>Array.&lt;any&gt;</code> - obj.opts  an array of options  
-**See**: Function [toArgs](callnpm.md#.toArgs)         published by module callnpm for a detailed function description.  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - Resolved options object  
 
-| Param | Type |
-| --- | --- |
-| grunt | <code>grunt</code> | 
-| task | <code>grunt.task</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| grunt | <code>grunt</code> | The Grunt runtime instance |
+| task | <code>grunt.task</code> | The current Grunt task instance |
+| [options] | <code>Object</code> | Optional task options override |
 

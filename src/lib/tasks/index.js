@@ -1,45 +1,31 @@
 /**
- *	index.js: grunt-call-npm/tasks
+ * lib/tasks/index.js: grunt-call-npm
  *
- *  @module grunt-call-npm/tasks
+ * Aggregated tasks API for `grunt-call-npm`.
+ *
+ * This module exposes the public task-related functions that are
+ * intended for external consumption.
+ * 
+ * @module grunt-call-npm/tasks
  *
  *//*
- *  © 2024, slashlib.org.
+ *  © 2024, db-developer.
  *
- *  index.js  is distributed WITHOUT ANY WARRANTY; without even the implied
- *  warranty  of  MERCHANTABILITY  or  FITNESS  FOR  A PARTICULAR  PURPOSE.
- *
+ *  Distributed  WITHOUT  ANY WARRANTY;  without  even the  implied
+ *  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 "use strict";
 
-/**
- *  Module table
- *  @ignore
- */
-const _m = { callnpm:  require( "./callnpm" )};
+const callnpm = require( "./callnpm" );
 
 /**
- *  String table
- *  @ignore
- */
-const _STRINGS = {
-  REGISTERMULTITASKCALLNPM: "registerMultiTaskCallNPM",
-  RUNTASKCALLNPM:           "runTaskCallNPM"
-};
-
-// Module exports:
-/**
- *  Register a multitask for call_npm.
+ *  Registers the `call_npm` multitask with Grunt.
  *
- *  @see    Function [registerMultiTaskChkOutdated]{@link callnpm.md#.registerMultiTaskChkOutdated}
- *          published by module callnpm for a detailed function description.
+ *  This function is the main entry point to integrate `grunt-call-npm`
+ *  into a Gruntfile. Internally, it forwards to
+ *  [callnpm.registerMultiTask]{@link ./callnpm.md#.registerMultiTask}.
  *
- *  @function module:grunt-call-npm/tasks.registerMultiTaskChkOutdated
- *  @param  {grunt} grunt
+ *  @function module:grunt-call-npm/tasks.registerMultiTask
+ *  @param  {grunt} grunt - The Grunt runtime instance.
  */
-Object.defineProperty( module.exports, _STRINGS.REGISTERMULTITASKCALLNPM, {
-  value:    _m.callnpm.registerMultiTaskCallNPM,
-  writable: false, enumerable: true, configurable: false });
-Object.defineProperty( module.exports, _STRINGS.RUNTASKCALLNPM,  {
-  value:    _m.callnpm.runTaskCallNPM,
-  writable: false, enumerable: true, configurable: false });
+module.exports.registerMultiTask = callnpm.registerMultiTask

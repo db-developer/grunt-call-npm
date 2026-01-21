@@ -18,7 +18,7 @@ const expect    = require( "expect.js"   );
             expect( plugin ).to.be.a(   "function" );
         });
         it( "'plugin' should register", () => {
-            expect(() => { plugin( env.grunt ) }).not.to.throwException();
+            expect(() => { plugin( env.grunt ) }).not.to.throwException(( error ) => { console.log( "....", error )});
         });
       });
     } catch( error ) { console.log( error ); }

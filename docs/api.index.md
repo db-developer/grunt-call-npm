@@ -1,19 +1,20 @@
 # API Index #
 ## Modules
 
-* [grunt-call-grunt/options/callnpm](api.md/options/callnpm.md#module_grunt-call-grunt/options/callnpm)
-    * [~getArguments()](api.md/options/callnpm.md#module_grunt-call-grunt/options/callnpm..getArguments) ⇒ <code>Object</code>
-    * [~getOptions()](api.md/options/callnpm.md#module_grunt-call-grunt/options/callnpm..getOptions) ⇒ <code>Object</code>
-    * [~getTaskOptions(task)](api.md/options/callnpm.md#module_grunt-call-grunt/options/callnpm..getTaskOptions) ⇒ <code>Object</code>
-    * [~toArgs(grunt, task)](api.md/options/callnpm.md#module_grunt-call-grunt/options/callnpm..toArgs) ⇒ <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code>
 * [grunt-call-npm](api.md/index.md#module_grunt-call-npm)
-    * [.registerMultiTaskCallNPM(grunt)](api.md/index.md#module_grunt-call-npm.registerMultiTaskCallNPM)
+    * [.registerMultiTask(grunt)](api.md/index.md#module_grunt-call-npm.registerMultiTask)
 * [grunt-call-npm/constants](api.md/constants.md#module_grunt-call-npm/constants)
+    * [.TASKNAME](api.md/constants.md#module_grunt-call-npm/constants.TASKNAME) : <code>string</code>
+    * [.TASKDESCRIPTION](api.md/constants.md#module_grunt-call-npm/constants.TASKDESCRIPTION) : <code>string</code>
 * [grunt-call-npm/options](api.md/options/index.md#module_grunt-call-npm/options)
-    * [.toArgs(grunt, task)](api.md/options/index.md#module_grunt-call-npm/options.toArgs) ⇒ <code>Promise.&lt;Object&gt;</code> \| <code>Array.&lt;strings&gt;</code> \| <code>Array.&lt;any&gt;</code>
+    * [.toArgs(grunt, task, [options])](api.md/options/index.md#module_grunt-call-npm/options.toArgs) ⇒ <code>Promise.&lt;Object&gt;</code>
+* [grunt-call-npm/options/callnpm](api.md/options/callnpm.md#module_grunt-call-npm/options/callnpm)
+    * [.getArguments()](api.md/options/callnpm.md#module_grunt-call-npm/options/callnpm.getArguments) ⇒ <code>Object</code>
+    * [.getOptions()](api.md/options/callnpm.md#module_grunt-call-npm/options/callnpm.getOptions) ⇒ <code>Object</code>
+    * [.toArgs(grunt, task, [options])](api.md/options/callnpm.md#module_grunt-call-npm/options/callnpm.toArgs) ⇒ <code>Promise.&lt;Object&gt;</code>
 * [grunt-call-npm/tasks](api.md/tasks/index.md#module_grunt-call-npm/tasks)
-    * [.registerMultiTaskChkOutdated(grunt)](api.md/tasks/index.md#module_grunt-call-npm/tasks.registerMultiTaskChkOutdated)
+    * [.registerMultiTask(grunt)](api.md/tasks/index.md#module_grunt-call-npm/tasks.registerMultiTask)
 * [grunt-call-npm/tasks/callnpm](api.md/tasks/callnpm.md#module_grunt-call-npm/tasks/callnpm)
-    * [~executeCallNPM(grunt, task, obj)](api.md/tasks/callnpm.md#module_grunt-call-npm/tasks/callnpm..executeCallNPM)
-    * [~runTaskCallNPM()](api.md/tasks/callnpm.md#module_grunt-call-npm/tasks/callnpm..runTaskCallNPM) ⇒ <code>Promise</code>
-    * [~registerMultiTaskCallNPM(grunt)](api.md/tasks/callnpm.md#module_grunt-call-npm/tasks/callnpm..registerMultiTaskCallNPM)
+    * [.execute(grunt, task, obj)](api.md/tasks/callnpm.md#module_grunt-call-npm/tasks/callnpm.execute) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.runTask(grunt, task)](api.md/tasks/callnpm.md#module_grunt-call-npm/tasks/callnpm.runTask) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.registerMultiTask(grunt)](api.md/tasks/callnpm.md#module_grunt-call-npm/tasks/callnpm.registerMultiTask)

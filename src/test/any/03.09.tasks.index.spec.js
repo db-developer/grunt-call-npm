@@ -11,15 +11,10 @@ const expect    = require( "expect.js"   );
     const tasks   = require( "../../lib/tasks" );
 
     describe( "Testing exports of module 'tasks'", () => {
-      it( "Function 'registerMultiTaskCallNPM' should exist", () => {
-          expect( tasks.registerMultiTaskCallNPM ).not.to.be( undefined  );
-          expect( tasks.registerMultiTaskCallNPM ).not.to.be( null       );
-          expect( tasks.registerMultiTaskCallNPM ).to.be.a(   "function" );
-      });
-      it( "Function 'runTaskCallNPM' should exist", () => {
-          expect( tasks.runTaskCallNPM           ).not.to.be( undefined  );
-          expect( tasks.runTaskCallNPM           ).not.to.be( null       );
-          expect( tasks.runTaskCallNPM           ).to.be.a(   "function" );
+      it( "Function 'registerMultiTask' should exist", () => {
+          expect( tasks.registerMultiTask ).not.to.be( undefined  );
+          expect( tasks.registerMultiTask ).not.to.be( null       );
+          expect( tasks.registerMultiTask ).to.be.a(   "function" );
       });
     });
   });
