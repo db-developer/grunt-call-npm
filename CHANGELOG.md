@@ -1,3 +1,5 @@
+[BOTTOM](#001---2024-07-04) [AI](AI.md) [LICENSE](LICENSE) [README](README.md)
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -33,3 +35,5 @@ Minor fixes
 ## [0.0.1] - 2024-07-04
 
 Initial version
+
+[TOP](#changelog) [AI](AI.md) [LICENSE](LICENSE) [README](README.md)

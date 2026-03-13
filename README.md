@@ -1,7 +1,3 @@
-# grunt-call-npm
-
-run npm commands (like `install` or `update`) from grunt.
-
 [![npm version](https://img.shields.io/npm/v/grunt-call-npm?color=blue)](https://www.npmjs.com/package/grunt-call-npm)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![jsdoc](https://img.shields.io/static/v1?label=jsdoc&message=%20api%20&color=blue)](https://jsdoc.app/)
@@ -9,6 +5,12 @@ run npm commands (like `install` or `update`) from grunt.
 [![dependencies](https://img.shields.io/librariesio/release/npm/grunt-call-npm)](https://libraries.io/)
 ![Build & Test](https://github.com/db-developer/grunt-call-npm/actions/workflows/ci.yml/badge.svg)
 [![codecov](https://codecov.io/gh/db-developer/grunt-call-npm/branch/main/graph/badge.svg)](https://codecov.io/gh/db-developer/grunt-call-npm)
+
+[BOTTOM](#usage) [AI](AI.md) [CHANGELOG](CHANGELOG.md) [LICENSE](LICENSE)
+
+# grunt-call-npm
+
+run npm commands (like `install` or `update`) from grunt.
 
 This plugin is a fork of [grunt-npm-command](https://github.com/unindented/grunt-npm-command) (archived repository).  
 Reason: https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2
@@ -112,3 +114,5 @@ module.exports = function ( grunt, options ) {
 
 For `npm <command>` and supported command-line arguments, see the
 [npm documentation](https://docs.npmjs.com/).
+
+[TOP](#grunt-call-npm) [AI](AI.md) [CHANGELOG](CHANGELOG.md) [LICENSE](LICENSE)
